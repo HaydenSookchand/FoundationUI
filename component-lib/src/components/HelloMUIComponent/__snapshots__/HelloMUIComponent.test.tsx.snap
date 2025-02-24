@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HelloMUIComponent matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-xp6dn9"
+  >
+    <h4
+      class="MuiTypography-root MuiTypography-h4 css-1c0vpmj-MuiTypography-root"
+    >
+      Hello World MUI JSX
+    </h4>
+  </div>
+</DocumentFragment>
+`;

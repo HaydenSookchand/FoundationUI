@@ -1,0 +1,51 @@
+import { Meta } from "@storybook/blocks";
+import { Card, CardContent, Typography, Box } from "@mui/material";
+import spacing from "../../theme/spacing";
+import colors from "../../theme/colors";
+
+<Meta title="Brand/Spacing" />
+
+# Spacing
+
+
+<Box
+  sx={{
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+    gap: 2,
+    mt: 3,
+  }}
+>
+  {Object.entries(spacing).map(([name, value]) => (
+    <Card
+      key={name}
+      sx={{
+        width: 180,
+        bgcolor: 'background.paper',
+        borderRadius: 2,
+        overflow: 'hidden',
+        boxShadow: 1,
+      }}
+    >
+      <CardContent sx={{ textAlign: 'center' }}>
+        <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+          {name.toUpperCase()}
+        </Typography>
+        <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2 }}>
+          {value}
+        </Typography>
+        <Box
+          sx={{
+            display: 'flex',
+            gap: value,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <Box sx={{ width: 20, height: 20, bgcolor: colors.primary, borderRadius: 1 }} />
+          <Box sx={{ width: 20, height: 20, bgcolor: colors.secondary, borderRadius: 1 }} />
+        </Box>
+      </CardContent>
+    </Card>
+  ))}
+</Box>

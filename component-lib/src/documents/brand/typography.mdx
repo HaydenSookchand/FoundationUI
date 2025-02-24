@@ -1,0 +1,44 @@
+import { Meta } from "@storybook/blocks";
+import { Typography, Box, Card, CardContent } from "@mui/material";
+import typography from "../../theme/typography";
+import colors from "../../theme/colors";
+
+<Meta title="Brand/Typography" />
+
+# Typography
+
+
+
+## Font Sizes
+
+<Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 2 }}>
+  {Object.entries(typography.fontSizes).map(([key, size]) => (
+    <Card key={key} sx={{ backgroundColor: colors.white, p: 2, borderRadius: 2, boxShadow: 1 }}>
+      <CardContent>
+        <Typography sx={{ fontSize: size, fontFamily: typography.fontFamily, fontWeight: 600, color: colors.black }}>
+          Aa
+        </Typography>
+        <Typography variant="body2" sx={{ color: colors.accentText, mt: 1 }}>
+          {`Size: ${key} (${size})`}
+        </Typography>
+      </CardContent>
+    </Card>
+  ))}
+</Box>
+
+## Line Heights
+
+<Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 2, mt: 4 }}>
+  {Object.entries(typography.lineHeights).map(([key, height]) => (
+    <Card key={key} sx={{ backgroundColor: colors.white, p: 2, borderRadius: 2, boxShadow: 1 }}>
+      <CardContent>
+        <Typography sx={{ lineHeight: height, fontFamily: typography.fontFamily, fontWeight: 500, fontSize: typography.fontSizes.md, color: colors.black }}>
+          The quick brown fox jumps over the lazy dog.
+        </Typography>
+        <Typography variant="body2" sx={{ color: colors.accentText, mt: 1 }}>
+          {`Line Height: ${key} (${height})`}
+        </Typography>
+      </CardContent>
+    </Card>
+  ))}
+</Box>

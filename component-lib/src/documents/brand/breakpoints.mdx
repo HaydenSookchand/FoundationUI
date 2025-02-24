@@ -1,0 +1,26 @@
+import { Meta } from "@storybook/blocks";
+import { Typography, Box, Card, CardContent } from "@mui/material";
+import breakpoints from "../../theme/breakpoints";
+import colors from "../../theme/colors";
+
+<Meta title="Brand/Breakpoints" />
+
+# Breakpoints
+
+
+## Defined Breakpoints
+
+<Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 2 }}>
+  {Object.entries(breakpoints).map(([key, value]) => (
+    <Card key={key} sx={{ backgroundColor: colors.white, p: 2, borderRadius: 2, boxShadow: 1 }}>
+      <CardContent>
+        <Typography variant="h6" sx={{ color: colors.black }}>
+          {key.toUpperCase()}
+        </Typography>
+        <Typography variant="body2" sx={{ color: colors.accentText, mt: 1 }}>
+          {`Value: ${value}`}
+        </Typography>
+      </CardContent>
+    </Card>
+  ))}
+</Box>
