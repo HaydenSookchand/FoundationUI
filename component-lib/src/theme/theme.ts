@@ -1,9 +1,7 @@
-import colors from './colors';
-import breakpoints from './breakpoints';
-import spacing from './spacing';
-import borders from './borders';
-import typography from './typography';
-import buttons from './buttons';
+import colors from "./colors";
+import breakpoints from "./breakpoints";
+import spacing from "./spacing";
+import typography from "./typography";
 
 const theme = {
   palette: {
@@ -15,11 +13,9 @@ const theme = {
       paper: colors.black,
     },
   },
-  borders,
   typography,
   breakpoints,
   spacing,
-  buttons,
 };
 
 export default theme;

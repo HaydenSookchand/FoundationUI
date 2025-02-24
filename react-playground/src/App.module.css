@@ -1,0 +1,133 @@
+/* App.module.css */
+/* Define color variables for easier maintenance */
+:root {
+  --background-dark: #1e1e1e;
+  --background-darker: #252526;
+  --text-color: #d4d4d4;
+  --border-color: #3c3c3c;
+  --accent-color: white; /* Yellow accent */
+}
+
+.App {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  background-color: var(--background-dark);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+}
+
+/* Left Section: Intro */
+.Intro {
+  flex: 1;
+  padding: 20px;
+  background-color: var(--background-darker);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+}
+
+.Intro h1 {
+  margin-top: 20px;
+  font-size: 2rem;
+  color: var(--accent-color); /* Use yellow for the heading text */
+  /* Removed border-bottom accent */
+}
+
+.Intro p {
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* Right Section: Controls and Rendering Area */
+.RightPanel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: var(--background-darker);
+  border-left: 1px solid var(--border-color);
+  overflow-y: auto;
+}
+
+/* Dropdown */
+.SelectWrapper {
+  margin-bottom: 20px;
+}
+
+.SelectWrapper label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+.Dropdown {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  background-color: var(--background-dark);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.Dropdown:focus {
+  border-color: var(--border-color); /* Maintain consistency */
+}
+
+/* Props Editor */
+.PropsEditor {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--background-dark);
+}
+
+.PropField {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.PropField label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: var(--text-color);
+  transition: color 0.3s;
+}
+
+/* When an input/select within a PropField is focused, change the label color to yellow */
+.PropField:focus-within label {
+  color: var(--accent-color);
+}
+
+.PropField input,
+.PropField select {
+  padding: 6px;
+  font-size: 14px;
+  background-color: var(--background-dark);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.PropField input:focus,
+.PropField select:focus {
+  border-color: var(--border-color); /* No yellow accent on borders */
+}
+
+/* Render Area */
+.RenderArea {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed var(--border-color);
+  padding: 20px;
+  background-color: var(--background-dark);
+}
